@@ -21,7 +21,13 @@ func startRepl() {
 			continue
 		}
 
-		fmt.Println("echo:", cleanedInput)
+		command := cleanedInput[0]
+		switch command {
+		case "exit":
+			os.Exit(0)
+		default:
+			fmt.Println("unknown command")
+		}
 	}
 }
 
